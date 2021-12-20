@@ -3,7 +3,8 @@
   <h1 [style.font-size.em]="myHelloComponent.namesList.length > 0 ? 2 : 1.5">
     Let's learn Angular
   </h1>
-  <div [class.hidden]="myHelloComponent.inputName.length == 0">Writting '{{myHelloComponent.inputName}}' in HelloComponent</div>
+  <div [class.hidden]="myHelloComponent.inputName.length == 0">
+    <span [ngClass]="updateNameClasses(myHelloComponent.inputName)">'{{myHelloComponent.inputName}}'</span> in HelloComponent</div>
   <br>
   <custom-hello #myHelloComponent (sayHello)='onSayHello($event)'></custom-hello>
 </div>
