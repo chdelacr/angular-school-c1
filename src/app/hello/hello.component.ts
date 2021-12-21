@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { LoggerService } from "../logger-service";
 
 @Component ({
     selector: 'custom-hello',
@@ -13,6 +14,8 @@ export class HelloComponent {
     public namesList:Array<string> = [];
     public inputName:string = '';
 
+    constructor(private logger:LoggerService){}
+
     onNameClick(){
         this.sayHello.emit('Hello!')
     }
@@ -20,6 +23,6 @@ export class HelloComponent {
     addName(){
         this.namesList.push(this.inputName);
         this.inputName = '';
-        console.log(this.namesList);
+        this.logger.log(this.namesList);
     }
 }
