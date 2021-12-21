@@ -6,6 +6,7 @@ import { HelloComponent } from './hello/hello.component';
 import { UpperCapitalPipe } from './hello/upper-capital.pipe';
 import { FormsModule } from '@angular/forms';
 import { LoggerService } from './logger-service';
+import { GreetingsService } from './greetings-service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { LoggerService } from './logger-service';
     BrowserModule,
     FormsModule
   ],
-  providers: [LoggerService],
+  providers: [LoggerService, GreetingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
